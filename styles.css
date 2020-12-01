@@ -25,3 +25,11 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+
+.napoleon {
+  position: absolute;
+}
+
+.napoleon img {
+  height: 100px;
+}
