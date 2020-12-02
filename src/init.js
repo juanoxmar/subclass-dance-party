@@ -27,7 +27,22 @@ $(document).ready(function() {
       $('body').width() * Math.random(),
       Math.random() * 1000
     );
+
+    //added this while mike was gone
+    dancer.$node.on('click', function() {
+      var left = $(this)[0].offsetLeft;
+      var top = $(this)[0].offsetTop;
+      window.danceOff(left, top);
+    });
+
+    window.dancers.push(dancer);
+
     $('body').append(dancer.$node);
   });
+
+  $('.lineup').on('click', function(event) {
+    window.lineupDancers();
+  });
+
 });
 

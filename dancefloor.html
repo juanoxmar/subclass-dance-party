@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Object Dance Party</title>
+    <link href="http://fonts.cdnfonts.com/css/disco-3" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
     <script src="src/dancer.js"></script>
@@ -9,6 +10,8 @@
     <script src="src/blinkyDancer.js"></script>
     <script src="src/moonwalk.js"></script>
     <script src="src/airguitar.js"></script>
+    <script src="src/lineup.js"></script>
+    <script src="src/danceOff.js"></script>
   </head>
   <body>
     <div class="topbar">
@@ -16,7 +19,30 @@
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeBlinkyDancer">add a blinky dancer</a>
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="Moonwalk">Napoleon, do the moonwalk!</a>
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="AirGuitar">Napoleon, strum that air guitar!</a>
+      <a href="#" class="lineup" lineup-function-name="lineupDancers">Napoleons, form an impenetrable barrier!</a>
     </div>
+    <img class="dj" src="./assets/dj.gif">
     <script src="src/init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jplayer/2.9.2/jplayer/jquery.jplayer.min.js" integrity="sha512-g0etrk7svX8WYBp+ZDIqeenmkxQSXjRDTr08ie37rVFc99iXFGxmD0/SCt3kZ6sDNmr8sR0ISHkSAc/M8rQBqg==" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+       $("#jquery_jplayer_1").jPlayer({
+        ready: function () {
+         $(this).jPlayer("setMedia", {
+          mp3: "./assets/CannedHeat.mp3",
+         });
+        },
+        swfPath: "/js",
+        supplied: "mp3"
+       });
+      });
+     </script>
+     <div class="player">
+       <div id="jquery_jplayer_1"></div>
+       <div id="jp_container_1">
+        <a href="#" class="jp-play">Play</a>
+        <a href="#" class="jp-pause">Pause</a>
+       </div>
+     </div>
   </body>
 </html>
